@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOBBY</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    select {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    #options, #loginForm, #patientRegistrationForm, #doctorRegistrationForm {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #options {
+        display: none;
+    }
+
+    #loginForm, #patientRegistrationForm, #doctorRegistrationForm {
+        display: none;
+    }
+</style>
+</head>
+<body>
+<h1>Escolha o tipo de usuário:</h1>
+<form id="userTypeForm">
+    <label for="userType">Sou:</label>
+    <select id="userType" name="userType">
+        <option value="patient">Paciente</option>
+        <option value="doctor">Médico</option>
+    </select>
+    <br><br>
+    <button type="button" onclick="nextStep()">Continuar</button>
+</form>
+
+<div id="options">
+    <h2>Escolha uma opção:</h2>
+    <ul>
+        <li><a href="#" onclick="showLogin()">Fazer Login</a></li>
+        <li><a href="#" onclick="showPatientRegistration()">Cadastrar-se como Paciente</a></li>
+        <li><a href="#" onclick="showDoctorRegistration()">Cadastrar-se como Médico</a></li>
+        <li><a href="#">Continuar como Usuário sem Login</a></li>
+    </ul>
+</div>
+
+<div id="loginForm">
+    <!-- Formulário de login -->
+</div>
+
+<div id="patientRegistrationForm">
+    <!-- Formulário de cadastro de paciente -->
+</div>
+
+<div id="doctorRegistrationForm">
+    <!-- Formulário de cadastro de médico -->
+</div>
+
+<script>
+    function nextStep() {
+        var userType = document.getElementById("userType").value;
+        if (userType === "patient" || userType === "doctor") {
+            document.getElementById("userTypeForm").style.display = "none";
+            document.getElementById("options").style.display = "block";
+        }
+    }
+
+    function showLogin() {
+        document.getElementById("options").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+    }
+
+    function showPatientRegistration() {
+        document.getElementById("options").style.display = "none";
+        document.getElementById("patientRegistrationForm").style.display = "block";
+    }
+
+    function showDoctorRegistration() {
+        document.getElementById("options").style.display = "none";
+        document.getElementById("doctorRegistrationForm").style.display = "block";
+    }
+</script>
+</body>
+</html>

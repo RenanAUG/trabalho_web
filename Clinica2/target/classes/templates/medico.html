@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CADASTRO MÉDICO</title>
+</head>
+<body>
+<h1>Cadastro de Médico</h1>
+<form method="post" action="/medicos/cadastrar">
+    <label for="nome">Nome Completo:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="telefone">Telefone:</label><br>
+    <input type="tel" id="telefone" name="telefone" required><br><br>
+
+    <label for="especialidade">Especialidade:</label><br>
+    <input type="text" id="especialidade" name="especialidade" required><br><br>
+
+    <label for="crm">CRM:</label><br>
+    <input type="text" id="crm" name="crm" required><br><br>
+
+    <label for="endereco">Endereço:</label><br>
+    <textarea id="endereco" name="endereco" rows="4" required></textarea><br><br>
+
+    <button type="submit">Cadastrar</button>
+</form>
+</body>
+</html>
