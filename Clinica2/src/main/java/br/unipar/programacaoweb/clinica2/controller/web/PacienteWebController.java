@@ -18,16 +18,16 @@ public class PacienteWebController {
         this.pacienteService = pacienteService;
     }
 
-    @GetMapping("/pacientes")
+    @GetMapping("/paciente")
     private String getAllPacientes(Model model) {
         List<Paciente> pacientes = pacienteService.getAll();
         model.addAttribute("pacientes", pacientes);
-        return "pacientes";
+        return "paciente";
     }
 
-    @PostMapping("/pacientes/save")
+    @PostMapping("/paciente/save")
     public String savePacientes(Paciente paciente) {
         pacienteService.save(paciente);
-        return "redirect:/pacientes";
+        return "redirect:/paciente";
     }
 }

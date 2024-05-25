@@ -28,7 +28,4 @@ public class Paciente implements Serializable {
 
     @Column
     private String plano;
-
-    @OneToOne
-    private Atendimento atendimento;
 }

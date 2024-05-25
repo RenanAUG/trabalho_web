@@ -20,7 +20,4 @@ public class Medico implements Serializable {
 
     @Column
     private String especialidade;
-
-    @OneToOne
-    private Atendimento atendimento;
 }

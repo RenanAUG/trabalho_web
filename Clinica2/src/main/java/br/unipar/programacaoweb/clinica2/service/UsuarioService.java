@@ -25,4 +25,8 @@ public class UsuarioService {
     public Usuario validarUsuario(String login, String senha) {
         return this.usuarioRepository.findByLoginAndSenha(login, senha);
     }
+
+    public Usuario validarAdmin(String login) {
+        return this.usuarioRepository.findByLogin(login);
+    }
 }

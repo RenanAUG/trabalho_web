@@ -32,9 +32,9 @@ public class LoginWebController {
         return "Hello " + name + "!";
     }
 
-    @GetMapping("/bemvindo")
-    public String bemvindo() {
-        return "bemvindo";
+    @GetMapping("/telaGeral")
+    public String telaGeral() {
+        return "telaGeral";
     }
 
     @PostMapping("/login")
@@ -46,7 +46,7 @@ public class LoginWebController {
         if(usuario != null) {
             //se nosso usuario tiver válido
             session.setAttribute("usuarioLogado", username);
-            return "redirect:/bemvindo";
+            return "redirect:/telaGeral";
         } else {
             model.addAttribute("erro",
                     "Usuário ou senha inválidos");
